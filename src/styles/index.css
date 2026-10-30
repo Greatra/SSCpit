@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Mukta:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Marathi&display=swap');
+@import "tailwindcss";
+@import "./trinity-devanagari.css";
+
+@theme {
+  --font-serif: Cormorant Garamond, Cinzel, "Playfair Display", Georgia, serif;
+  --font-sans: Inter, Mukta, -apple-system, system-ui, sans-serif;
+  --font-marathi-serif: "Noto Serif Devanagari", "Tiro Devanagari Marathi", Georgia, serif;
+
+  --color-canvas: #070709;
+  --color-ink: #fdfcfb;
+  --color-primary: #d95d39;
+  --color-coral: #d95d39;
+  --color-amber: #c5a059;
+  --color-teal: #3ea890;
+  --color-card: #121218;
+  --color-hairline: rgba(255, 255, 255, 0.08);
+  --color-dark-floor: #070709;
+  --color-spec-cell: #16161f;
+
+  --color-primary-active: #b84724;
+  --color-primary-disabled: rgba(255, 255, 255, 0.15);
+  --color-primary-on-dark: #e06042;
+
+  --color-body: #c7c0b5;
+  --color-body-strong: #ebe5dc;
+  --color-muted: #8e887f;
+  --color-muted-soft: #635f58;
+
+  --color-canvas-parchment: #0c0c11;
+  --color-surface-soft: #0c0c11;
+  --color-surface-card: #121218;
+  --color-surface-cream-strong: #1a1a24;
+
+  --color-surface-dark: #070709;
+  --color-surface-dark-soft: #0e0e13;
+  --color-surface-dark-elevated: #16161f;
+  --color-surface-black: #000000;
+
+  --color-on-primary: #ffffff;
+  --color-on-dark: #fdfcfb;
+  --color-on-dark-soft: #a8a29e;
+
+  --color-hairline-soft: rgba(255, 255, 255, 0.05);
+  --color-divider-dark: rgba(255, 255, 255, 0.10);
+
+  --color-accent-teal: #3ea890;
+  --color-accent-amber: #c5a059;
+  --color-accent-terracotta: #d95d39;
+  --color-accent-copper: #c5a059;
+
+  --color-success: #3ea890;
+  --color-warning: #c5a059;
+  --color-error: #d95d39;
+
+  /* Awwwards Archival Semantic Palette (AMOLED) */
+  --color-archival-terracotta: #d95d39;
+  --color-archival-terracotta-soft: rgba(217, 93, 57, 0.12);
+  --color-archival-terracotta-border: rgba(217, 93, 57, 0.35);
+
+  --color-archival-ochre: #c5a059;
+  --color-archival-ochre-soft: rgba(197, 160, 89, 0.12);
+  --color-archival-ochre-border: rgba(197, 160, 89, 0.35);
+
+  --color-archival-cobalt: #2b7497;
+  --color-archival-cobalt-soft: rgba(43, 116, 151, 0.12);
+  --color-archival-cobalt-border: rgba(43, 116, 151, 0.35);
+
+  --color-archival-sage: #3ea890;
+  --color-archival-sage-soft: rgba(62, 168, 144, 0.12);
+  --color-archival-sage-border: rgba(62, 168, 144, 0.35);
+
+  --color-archival-crimson: #d95d39;
+  --color-archival-crimson-soft: rgba(217, 93, 57, 0.12);
+  --color-archival-crimson-border: rgba(217, 93, 57, 0.35);
+
+  --color-archival-basalt: #0e0e13;
+  --color-archival-hairline: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  :root {
+    --color-canvas: #070709;
+    --color-ink: #fdfcfb;
+    --color-primary: #d95d39;
+    --color-coral: #d95d39;
+    --color-amber: #c5a059;
+    --color-teal: #3ea890;
+    --color-card: #121218;
+    --color-hairline: rgba(255, 255, 255, 0.08);
+    --color-dark-floor: #070709;
+    --color-spec-cell: #16161f;
+
+    --color-primary-active: #b84724;
+    --color-primary-disabled: rgba(255, 255, 255, 0.15);
+    --color-primary-on-dark: #e06042;
+
+    --color-body: #c7c0b5;
+    --color-body-strong: #ebe5dc;
+    --color-muted: #8e887f;
+    --color-muted-soft: #635f58;
+
+    --color-canvas-parchment: #0c0c11;
+    --color-surface-soft: #0c0c11;
+    --color-surface-card: #121218;
+    --color-surface-cream-strong: #1a1a24;
+
+    --color-surface-dark: #070709;
+    --color-surface-dark-soft: #0e0e13;
+    --color-surface-dark-elevated: #16161f;
+    --color-surface-black: #000000;
+
+    --color-on-primary: #ffffff;
+    --color-on-dark: #fdfcfb;
+    --color-on-dark-soft: #a8a29e;
+
+    --color-hairline-soft: rgba(255, 255, 255, 0.05);
+    --color-divider-dark: rgba(255, 255, 255, 0.10);
+
+    /* Trinity baseline reference tokens */
+    --color-accent-terracotta: #cc785c;
+    --color-accent-amber: #e8a55a;
+    --color-accent-teal: #5db8a6;
+    --color-accent-copper: #c5a059;
+
+    --color-success: #3ea890;
+    --color-warning: #c5a059;
+    --color-error: #d95d39;
+
+    /* Awwwards Archival Semantic Palette (AMOLED) */
+    --color-archival-terracotta: #d95d39;
+    --color-archival-terracotta-soft: rgba(217, 93, 57, 0.12);
+    --color-archival-terracotta-border: rgba(217, 93, 57, 0.35);
+
+    --color-archival-ochre: #c5a059;
+    --color-archival-ochre-soft: rgba(197, 160, 89, 0.12);
+    --color-archival-ochre-border: rgba(197, 160, 89, 0.35);
+
+    --color-archival-cobalt: #2b7497;
+    --color-archival-cobalt-soft: rgba(43, 116, 151, 0.12);
+    --color-archival-cobalt-border: rgba(43, 116, 151, 0.35);
+
+    --color-archival-sage: #3ea890;
+    --color-archival-sage-soft: rgba(62, 168, 144, 0.12);
+    --color-archival-sage-border: rgba(62, 168, 144, 0.35);
+
+    --color-archival-crimson: #d95d39;
+    --color-archival-crimson-soft: rgba(217, 93, 57, 0.12);
+    --color-archival-crimson-border: rgba(217, 93, 57, 0.35);
+
+    --color-archival-basalt: #0e0e13;
+    --color-archival-hairline: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Archival Double Hairline Rule (Royal Gold & Saffron Borders) */
+.archival-double-rule {
+  height: 3px;
+  width: 100%;
+  border-top: 1px solid rgba(197, 160, 89, 0.45);
+  border-bottom: 1px solid rgba(217, 93, 57, 0.35);
+  background: transparent;
+}
+
+/* Editorial Serif & Display Typography Standard ("Gold Valley" reference) */
+.font-serif,
+.font-editorial,
+.editorial-title {
+  font-family: 'Cormorant Garamond', 'Playfair Display', 'Cinzel', Georgia, serif !important;
+}
+
+.font-marathi-serif {
+  font-family: 'Noto Serif Devanagari', 'Tiro Devanagari Marathi', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Mukta", sans-serif;
+}
+
+/* 17px body typography standard (Apple / Claude baseline) */
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-body);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Mukta", "Noto Sans Devanagari", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.47;
+    letter-spacing: -0.374px;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  /* Strict Zero-Shadow Law: Standard UI elements, cards, and buttons MUST have box-shadow: none */
+  button,
+  input,
+  select,
+  textarea,
+  dialog,
+  .card,
+  .ui-card,
+  .spec-cell,
+  .accordion-card,
+  .filter-pill,
+  .nav-bar {
+    box-shadow: none !important;
+  }
+}
+
+/* BMW machined tracking (+1.5px / tracking-[0.15em]) for Latin alphanumeric codes only */
+.machined-tracking,
+.machined-label,
+.tracking-machined,
+[data-machined="true"] {
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Zero tracking on Devanagari script to preserve continuous headline shirorekha */
+:lang(mr),
+.devanagari,
+.marathi-text,
+[lang="mr"] {
+  letter-spacing: normal !important;
+}
+
+/* Trinity 4px 3-stop signature horizontal accent bar */
+.trinity-m-stripe {
+  display: flex;
+  height: 4px;
+  width: 100%;
+  overflow: hidden;
+}
+.trinity-m-stripe__coral {
+  flex: 1;
+  background-color: var(--color-primary);
+}
+.trinity-m-stripe__amber {
+  flex: 1;
+  background-color: var(--color-accent-amber);
+}
+.trinity-m-stripe__teal {
+  flex: 1;
+  background-color: var(--color-accent-teal);
+}
+
+/* Frosted glass utilities (Apple vibrancy) */
+.frosted-dark {
+  background: rgba(24, 23, 21, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.frosted-light {
+  background: rgba(250, 249, 245, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}

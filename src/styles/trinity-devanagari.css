@@ -1,0 +1,176 @@
+/* ==========================================================================
+   DECCAN ARCHIVAL HERITAGE SYSTEM : MARATHI DEVANAGARI OPTICAL ENGINE
+   Pillars: Bhurjapatra Paper + Kaas Basalt Ink + Tamrapat Copper & Shendri Vermilion
+   ========================================================================== */
+
+:root {
+  /* --- 1. Authentic Deccan Material & Manuscript Tokens (Dark AMOLED Premium) --- */
+  --trinity-canvas: #070709;             /* Obsidian AMOLED base */
+  --trinity-canvas-parchment: #0c0c11;   /* Secondary warm basalt folio band */
+  --trinity-surface-card: #121218;       /* Zero-shadow obsidian card */
+  --trinity-surface-active: #1a1a24;     /* Selected study mode / active tab */
+  
+  --trinity-ink: #fdfcfb;                /* Pure luminous manuscript text */
+  --trinity-body-strong: #ebe5dc;        /* Core historical concepts - 16:1 AAA */
+  --trinity-body: #c7c0b5;               /* Secondary Commentary - 11:1 AAA */
+  --trinity-muted: #8e887f;              /* Archival stone sepia */
+  --trinity-muted-soft: #635f58;         /* Hairline caption / numeric anchors */
+
+  /* --- 2. Dark Archival Stone Chrome --- */
+  --trinity-dark-floor: #070709;         /* Global nav & manuscript header */
+  --trinity-dark-recess: #0a0a0e;        /* Recessed stone panels */
+  --trinity-dark-elevated: #16161f;      /* Elevated folio cards */
+  --trinity-dark-black: #000000;         /* Pinned top bar */
+  --trinity-on-dark: #fdfcfb;            /* Luminous text */
+  --trinity-on-dark-soft: #a8a29e;       /* Secondary text */
+
+  /* --- 3. Heritage Voltage & Archival Accents --- */
+  --trinity-primary: #d95d39;            /* Shendri / Maratha Vermilion CTA & chapter seals */
+  --trinity-primary-active: #b84724;     /* Deep vermilion pressed state */
+  --trinity-primary-on-dark: #e06042;    /* Vermilion accent on dark stone */
+  --trinity-on-primary: #ffffff;         /* Crisp text on vermilion seals */
+  
+  --trinity-hairline: rgba(255, 255, 255, 0.08); /* 1px structural folio seam */
+  --trinity-hairline-soft: rgba(255, 255, 255, 0.05); /* 1px question divider */
+  --trinity-divider-dark: rgba(255, 255, 255, 0.10); /* 1px dark panel border */
+  
+  --trinity-accent-copper: #c5a059;      /* Brushed Royal Maratha Gold */
+  --trinity-accent-amber: #c5a059;       /* Historical milestone / rubric anchor */
+  --trinity-accent-teal: #3ea890;        /* Concept map node / verified mastery */
+  --trinity-success: #3ea890;            /* Verified Swadhyay completion */
+  --trinity-error: #d95d39;              /* Incorrect pair highlight */
+
+  /* --- 4. Optical Metrics for Devanagari Typography --- */
+  --lh-devanagari-display: 1.28;         /* Optimal line-height for large Marathi headers */
+  --lh-devanagari-body: 1.85;            /* Optical line-height for long-form answers */
+  --tracking-devanagari: 0em;            /* Zero tracking to protect Shirorekha joint continuity */
+
+  /* --- 5. Binary Geometric Discipline --- */
+  --trinity-radius-none: 0px;            /* Archival folios & full-bleed bands */
+  --trinity-radius-sm: 8px;              /* Swadhyay cards & concept maps */
+  --trinity-radius-pill: 9999px;         /* Interactive seals & chapter filter pills */
+
+  /* --- 6. Heritage Font Stacks --- */
+  --font-marathi-editorial: 'Noto Serif Devanagari', 'Tiro Devanagari Marathi', serif;
+  --font-marathi-ui: 'Mukta', 'Noto Sans Devanagari', system-ui, sans-serif;
+  --font-latin-archival: 'Cormorant Garamond', 'Cinzel', Georgia, serif;
+  --font-latin-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono-archival: 'JetBrains Mono', 'SF Mono', monospace;
+}
+
+/* ==========================================================================
+   MARATHI OPENTYPE SHAPING & HARFBUZZ DIRECTIVES
+   Requires <html lang="mr"> in index.html for localized Marathi glyphs (ल, ळ, श)
+   ========================================================================== */
+:lang(mr):not(.machined-label):not(.trinity-telemetry-tag__code):not([lang="en"]),
+.mr-text {
+  font-family: var(--font-marathi-ui);
+  letter-spacing: var(--tracking-devanagari);
+  text-transform: none;
+  font-synthesis: none;           /* Prevent browser fake-bolding that clogs counters */
+  font-feature-settings: 
+    "locl" 1, /* Localized Marathi glyph variants */
+    "akhn" 1, /* Akhand ligatures (क्ष, ज्ञ) */
+    "rphf" 1, /* Reph (top rafar) positioning */
+    "blwf" 1, /* Below-base forms (्र) */
+    "half" 1, /* Half-consonant conjunct forms */
+    "pstf" 1, /* Post-base forms */
+    "cjct" 1; /* Conjunct ligatures */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.machined-label,
+.trinity-telemetry-tag__code {
+  font-family: var(--font-mono-archival);
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   TYPOGRAPHIC SCALE (EDITORIAL ARCHIVAL DEVANAGARI CALIBRATION)
+   ========================================================================== */
+
+/* Chapter Hero & Display Headings */
+.trinity-heading-display:lang(mr) {
+  font-family: var(--font-marathi-editorial);
+  font-size: clamp(2.5rem, 4.5vw, 4.25rem);
+  line-height: var(--lh-devanagari-display);
+  font-weight: 600;
+  color: var(--trinity-ink);
+  letter-spacing: var(--tracking-devanagari);
+}
+
+/* Section & Question Type Headers (e.g., सकारण स्पष्ट करा) */
+.trinity-heading-section:lang(mr) {
+  font-family: var(--font-marathi-ui);
+  font-size: 1.375rem;            /* 22px */
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--trinity-ink);
+}
+
+/* Running Swadhyay Body Copy */
+.trinity-body-prose:lang(mr) {
+  font-family: var(--font-marathi-ui);
+  font-size: 1.125rem;            /* 18px */
+  line-height: var(--lh-devanagari-body);
+  font-weight: 400;
+  color: var(--trinity-body);
+  max-width: 62ch;
+}
+
+.trinity-body-prose:lang(mr) strong {
+  font-weight: 600;
+  color: var(--trinity-body-strong);
+}
+
+/* ==========================================================================
+   MOTION CHOREOGRAPHER GUARD: PREVENT MATRA CLIPPING IN ACCORDION REVEALS
+   ========================================================================== */
+.motion-matra-safe-mask {
+  overflow: hidden;
+  padding-top: 0.24em;            /* Clearance for ी, ै, ौ, and anusvara */
+  padding-bottom: 0.20em;         /* Clearance for ु, ू, ृ, and stacked conjuncts */
+  margin-top: -0.24em;
+  margin-bottom: -0.20em;
+}
+
+/* ==========================================================================
+   OPTICAL ALIGNMENT: TACTILE PILLS (9999PX)
+   ========================================================================== */
+.trinity-pill-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: var(--trinity-radius-pill);
+  border: 1px solid transparent;
+  padding-inline: 1.125rem;
+  padding-top: 0.6875rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.trinity-pill-button > svg {
+  transform: translateY(1px);
+  flex-shrink: 0;
+}
+
+/* Archival Hairline Seam */
+.trinity-micro-stripe {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #c84628 0%,
+    #c84628 33.33%,
+    #9e7b42 33.33%,
+    #9e7b42 66.66%,
+    #2c2825 66.66%,
+    #2c2825 100%
+  );
+}
